@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-import '../../app_theme.dart';
+import '../../../app_theme.dart';
 
-class SearchScreen extends StatelessWidget {
+class WatchListScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
