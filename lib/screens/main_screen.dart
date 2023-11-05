@@ -22,7 +22,7 @@ class _MainScreenState extends State<MainScreen> {
     return Scaffold(
       bottomNavigationBar: Theme(
         data: AppTheme.appTheme.copyWith(canvasColor: AppTheme.lightBlack),
-        child: BottomNavigationBar(
+        child: BottomNavigationBar(showUnselectedLabels: true,selectedFontSize: 13,unselectedFontSize: 11,
           items: const [
             BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
             BottomNavigationBarItem(icon: Icon(Icons.search), label: 'Search'),
