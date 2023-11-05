@@ -21,7 +21,7 @@ class _MainScreenState extends State<MainScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       bottomNavigationBar: Theme(
-        data: AppTheme.appTheme.copyWith(canvasColor: AppTheme.black),
+        data: AppTheme.appTheme.copyWith(canvasColor: AppTheme.lightBlack),
         child: BottomNavigationBar(
           items: const [
             BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
