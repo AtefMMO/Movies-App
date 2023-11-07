@@ -15,7 +15,7 @@ class MovieICarouseltemWidget extends StatefulWidget {
 }
 
 class _MovieICarouseltemWidgetState extends State<MovieICarouseltemWidget> {
-  bool isBookmarked = true;
+  bool isBookmarked = false;
 
   @override
   Widget build(BuildContext context) {
