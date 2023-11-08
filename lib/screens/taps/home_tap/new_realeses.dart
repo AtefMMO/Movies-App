@@ -21,7 +21,9 @@ class NewRealeses extends StatelessWidget {
             'New Releases',
             style: Theme.of(context).textTheme.titleMedium,
           ),
-          SizedBox(height: 10,),
+          SizedBox(
+            height: 10,
+          ),
           FutureBuilder<NewrealesesMoviesResponse>(
             builder: (context, snapshot) {
               if (snapshot.connectionState == ConnectionState.waiting) {
@@ -35,7 +37,7 @@ class NewRealeses extends StatelessWidget {
                   child: ListView.builder(
                     itemBuilder: (context, index) {
                       return Padding(
-                        padding: const EdgeInsets.only(left: 5,right: 5),
+                        padding: const EdgeInsets.only(left: 5, right: 5),
                         child: MovieItem(
                           movie: results![index],
                         ),
