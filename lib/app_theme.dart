@@ -15,6 +15,7 @@ class AppTheme {
         unselectedItemColor: lighterGrey,
         backgroundColor: black),
     textTheme: TextTheme(titleMedium: TextStyle(fontSize: 15,color: Colors.white),
-        titleSmall: TextStyle(fontSize: 12,color: lighterGrey))
+        titleSmall: TextStyle(fontSize: 12,color: lighterGrey),
+    titleLarge: TextStyle(fontSize: 22, color: Colors.white))
   );
 }
