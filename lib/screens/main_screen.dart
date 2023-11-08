@@ -24,7 +24,7 @@ class _MainScreenState extends State<MainScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return Scaffold( resizeToAvoidBottomInset: false,
       bottomNavigationBar: Theme(
         data: AppTheme.appTheme.copyWith(canvasColor: AppTheme.lightBlack),
         child: BottomNavigationBar(
