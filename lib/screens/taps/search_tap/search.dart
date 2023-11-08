@@ -81,12 +81,24 @@ class _SearchScreenState extends State<SearchScreen> {
                         } else {
                           var searchResults = snapshot.data!.results ?? [];
                           return Expanded(
-                            child: ListView.builder(
-                                itemBuilder: (context, index) {
-                                  return MovieSearchItem(
-                                      movie: searchResults[index]);
-                                },
-                                itemCount: searchResults.length),
+                            child: ListView.separated(
+                              itemBuilder: (context, index) {
+                                return MovieSearchItem(
+                                    movie: searchResults[index]);
+                              },
+                              itemCount: searchResults.length,
+                              separatorBuilder:
+                                  (BuildContext context, int index) {
+                                return Padding(
+                                  padding: const EdgeInsets.all(10.0),
+                                  child: Divider(
+                                    color: AppTheme.darkGrey,
+                                    thickness: 1,
+                                    height: 1,
+                                  ),
+                                );
+                              },
+                            ),
                           );
                         }
                       },

@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:movies/app_theme.dart';
 import 'package:movies/model/search_movies_response.dart';
@@ -18,21 +19,25 @@ class MovieSearchItem extends StatelessWidget {
             Row(
               children: [
                 Container(
-                  width: MediaQuery.of(context).size.width * 0.3, // Adjusted width
+                  width:
+                      MediaQuery.of(context).size.width * 0.3, // Adjusted width
                   height: MediaQuery.of(context).size.height * 0.2,
-                  child: Image.network(
-                    FixImage.fixImage(movie.posterPath ?? ""),
-                    fit: BoxFit.cover, // Changed to BoxFit.cover for aspect ratio
+                  child: CachedNetworkImage(
+                    imageUrl: FixImage.fixImage(movie.posterPath ?? ""),
+                    errorWidget: (context, url, error) => Icon(Icons.error),
+                    // Changed to BoxFit.cover for aspect ratio
                   ),
                 ),
                 SizedBox(width: 15.0),
                 Container(
-                  width: MediaQuery.of(context).size.width * 0.5, // Adjusted width
+                  width:
+                      MediaQuery.of(context).size.width * 0.5, // Adjusted width
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Padding(
-                        padding: const EdgeInsets.only(bottom: 8.0), // Adjust the space as needed
+                        padding: const EdgeInsets.only(
+                            bottom: 8.0), // Adjust the space as needed
                         child: Text(
                           movie.title ?? "",
                           style: Theme.of(context).textTheme.titleLarge,
@@ -40,7 +45,8 @@ class MovieSearchItem extends StatelessWidget {
                         ),
                       ),
                       Padding(
-                        padding: const EdgeInsets.only(bottom: 8.0), // Adjust the space as needed
+                        padding: const EdgeInsets.only(
+                            bottom: 8.0), // Adjust the space as needed
                         child: Text(
                           movie.releaseDate ?? "",
                           style: Theme.of(context).textTheme.titleMedium,
@@ -48,29 +54,22 @@ class MovieSearchItem extends StatelessWidget {
                         ),
                       ),
                       Padding(
-                        padding: const EdgeInsets.only(bottom: 8.0), // Adjust the space as needed
+                        padding: const EdgeInsets.only(
+                            bottom: 8.0), // Adjust the space as needed
                         child: Text(
                           movie.originalLanguage ?? "",
-                          style: Theme.of(context).textTheme.titleSmall!.copyWith(
-                            fontSize: 16
-                          ),
+                          style: Theme.of(context)
+                              .textTheme
+                              .titleSmall!
+                              .copyWith(fontSize: 16),
                           overflow: TextOverflow.ellipsis,
                         ),
                       ),
                     ],
-                   ),
+                  ),
                 ),
               ],
             ),
-            Padding(
-              padding: const EdgeInsets.all(10.0),
-              child: Divider(
-                color: AppTheme.darkGrey,
-                thickness: 1,
-                height: 1,
-
-              ),
-            )
           ],
         ),
       ),
