@@ -4,6 +4,7 @@ import 'package:movies/api_constants.dart';
 import 'package:movies/model/popular_movies_response.dart';
 
 import 'model/newrealeses_movies_response.dart';
+import 'model/top_rated_movies_response.dart';
 
 class ApiManager {
   static Future<PopularMoviesResponse> getPopularMovies() async {
@@ -32,6 +33,23 @@ class ApiManager {
           await http.get(url, headers: ApiConstants.newRealsesHeaders);
       if (response.statusCode == 200) {
         return NewrealesesMoviesResponse.fromJson(jsonDecode(response.body));
+      } else {
+        print('Api Request Failed: ${response.statusCode}');
+        throw Exception('Api Request Failed');
+      }
+    } catch (error) {
+      print("Api Request Error: $error");
+      throw error;
+    }
+  }
+
+  static Future<TopRatedMoviesResponse> getTopRatedMovies() async {
+    Uri url = Uri.https(ApiConstants.baseUrl, ApiConstants.recommendedApi);
+    try {
+      var response =
+          await http.get(url, headers: ApiConstants.recommendedHeaders);
+      if (response.statusCode == 200) {
+        return TopRatedMoviesResponse.fromJson(jsonDecode(response.body));
       } else {
         print('Api Request Failed: ${response.statusCode}');
         throw Exception('Api Request Failed');

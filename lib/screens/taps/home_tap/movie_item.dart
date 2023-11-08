@@ -17,28 +17,28 @@ class MovieItem extends StatelessWidget {
               Image.network(FixImage.fixImage(movie.posterPath ?? 'No Image'))),
       isBookmarked
           ? Icon(
-        Icons.bookmark_sharp,
-        size: 30,
-        color: AppTheme.lightGold,
-      )
+              Icons.bookmark_sharp,
+              size: 30,
+              color: AppTheme.lightGold,
+            )
           : Icon(
-        Icons.bookmark_sharp,
-        size: 30,
-        color: AppTheme.lightGrey,
-      ),
+              Icons.bookmark_sharp,
+              size: 30,
+              color: AppTheme.lightGrey,
+            ),
       Padding(
         padding: const EdgeInsets.all(7),
         child: isBookmarked
             ? const Icon(
-          Icons.check,
-          size: 15,
-          color: Colors.white,
-        )
+                Icons.check,
+                size: 15,
+                color: Colors.white,
+              )
             : const Icon(
-          Icons.add,
-          size: 15,
-          color: Colors.white,
-        ),
+                Icons.add,
+                size: 15,
+                color: Colors.white,
+              ),
       ),
     ]);
   }
