@@ -4,6 +4,8 @@ import 'package:movies/api_constants.dart';
 import 'package:movies/model/by_id_movies_response.dart';
 import 'package:movies/model/popular_movies_response.dart';
 import 'package:movies/model/search_movies_response.dart';
+import 'model/browse_genre_response.dart';
+import 'model/movies_by_genre_response.dart';
 import 'package:movies/model/similar_movies_response.dart';
 
 import 'model/newrealeses_movies_response.dart';
@@ -79,6 +81,44 @@ class ApiManager {
       throw error;
     }
   }
+
+  static Future<BrowseGenreResponse> getBrowseGenre(String language) async {
+    Uri url = Uri.https(ApiConstants.baseUrl, ApiConstants.browseGenreApi,
+        {'language': language});
+    try {
+      var response =
+          await http.get(url, headers: ApiConstants.browseGenreHeaders);
+      if (response.statusCode == 200) {
+        return BrowseGenreResponse.fromJson(jsonDecode(response.body));
+      } else {
+        print('Api Request Failed: ${response.statusCode}');
+        throw Exception('Api Request Failed');
+      }
+    } catch (error) {
+      print("Api Request Error: $error");
+      throw error;
+    }
+  }
+
+  static Future<MoviesByGenreResponse> getMoviesByGenre(String with_genres) async {
+    Uri url = Uri.https(ApiConstants.baseUrl, ApiConstants.moviesByGenreApi,
+        {'with_genres': with_genres});
+    try {
+      var response =
+          await http.get(url, headers: ApiConstants.moviesByGenreHeaders);
+      if (response.statusCode == 200) {
+        return MoviesByGenreResponse.fromJson(jsonDecode(response.body));
+      } else {
+        print('Api Request Failed: ${response.statusCode}');
+        throw Exception('Api Request Failed');
+      }
+    } catch (error) {
+      print("Api Request Error: $error");
+      throw error;
+    }
+  }
+
+
 
   static Future<MoviesById> getMoviesById(String MovieID) async {
     Uri url =
