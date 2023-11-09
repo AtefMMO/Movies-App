@@ -1,6 +1,5 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
-import 'package:movies/model/newrealeses_movies_response.dart';
 import '../../../app_theme.dart';
 import '../watchlist_tap/FirerBase_Utils.dart';
 import '../watchlist_tap/Movie.dart';
@@ -21,38 +20,30 @@ class _MovieItemState extends State<MovieItem> {
   @override
   Widget build(BuildContext context) {
     return Stack(children: [
-
-      InkWell(
-        onTap: (){
-          addMovie();
-          if( isBookmarked)
-          {
-            isBookmarked=false;
-          }
-          else {
-            isBookmarked=true;
-
-          }
-          setState(() {
-          });
-        },
-        child: ClipRRect(
-            borderRadius: BorderRadius.circular(10),
-            child:
-                Image.network(FixImage.fixImage(widget.movie.posterPath ?? 'No Image'))),
-      ),
-            isBookmarked
-
       ClipRRect(
-          borderRadius: BorderRadius.circular(10),
-          child:CachedNetworkImage(
-          imageUrl: FixImage.fixImage(movie.posterPath ?? 'No Image'),
-          errorWidget: (context, url, error) => Center(child: Icon(Icons.error,size: 50,)),
-          // Changed to BoxFit.cover for aspect ratio
+        borderRadius: BorderRadius.circular(10),
+        child: InkWell(
+          onTap: () {
+            addMovie();
+            if (isBookmarked) {
+              isBookmarked = false;
+            } else {
+              isBookmarked = true;
+            }
+            setState(() {});
+          },
+          child: CachedNetworkImage(
+            imageUrl: FixImage.fixImage(widget.movie.posterPath ?? 'No Image'),
+            errorWidget: (context, url, error) => Center(
+                child: Icon(
+              Icons.error,
+              size: 50,
+            )),
+            // Changed to BoxFit.cover for aspect ratio
           ),
+        ),
       ),
       isBookmarked
-
           ? Icon(
               Icons.bookmark_sharp,
               size: 30,
@@ -80,15 +71,11 @@ class _MovieItemState extends State<MovieItem> {
     ]);
   }
 
-  void addMovie(){
-    Movie movie = Movie(
-        id: widget.movie!.id.toString()
-    );
-    FirebaseUtils.addMovieToFirebase(movie.id!).timeout(
-        Duration(milliseconds: 500),
-        onTimeout: (){
-          print('movie added to WatchList');
-        }
-    );
+  void addMovie() {
+    Movie movie = Movie(id: widget.movie!.id.toString());
+    FirebaseUtils.addMovieToFirebase(movie.id!)
+        .timeout(Duration(milliseconds: 500), onTimeout: () {
+      print('movie added to WatchList');
+    });
   }
 }

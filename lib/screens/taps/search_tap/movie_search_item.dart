@@ -5,7 +5,7 @@ import 'package:movies/model/search_movies_response.dart';
 import 'package:movies/screens/taps/home_tap/image.dart';
 
 class MovieSearchItem extends StatelessWidget {
-  late Results movie;
+  late var movie;
 
   MovieSearchItem({required this.movie});
 

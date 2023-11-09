@@ -2,6 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:movies/screens/taps/watchlist_tap/FirerBase_Utils.dart';
 import 'package:movies/screens/taps/watchlist_tap/Movie.dart';
+import 'package:movies/screens/taps/watchlist_tap/watchlist_movies.dart';
 import '../../../app_theme.dart';
 import 'Movie_Widget.dart';
 
@@ -10,44 +11,56 @@ class WatchListScreen extends StatefulWidget {
   State<WatchListScreen> createState() => _WatchListScreenState();
 }
 
-
 class _WatchListScreenState extends State<WatchListScreen> {
-
   @override
-  List<Movie> MovieList=[];
+  List<Movie> movieList = [];
+
   @override
   void initState() {
     super.initState();
-    // Fetch data from Firestore when the widget initializes
-     getAllMovieFromFireStore();
 
+    getAllMovieFromFireStore();
   }
+
   Widget build(BuildContext context) {
-    // if (MovieList.isEmpty){getAllMovieFromFireStore();
-    // }
     return Container(
       color: AppTheme.black,
       child: Stack(
         children: [
-          ListView.builder(
+          ListView.separated(
             itemBuilder: (context, index) {
-              return MovieWidgetItem(id:MovieList[index].id!,);
+              return WatchListMovies(
+                id: movieList[index].id.toString(),
+              );
             },
-            itemCount: MovieList.length,
+            itemCount: movieList.length,
+            separatorBuilder: (BuildContext context, int index) {
+              return Padding(
+                padding: const EdgeInsets.all(10.0),
+                child: Divider(
+                  color: AppTheme.darkGrey,
+                  thickness: 1,
+                  height: 1,
+                ),
+              );
+            },
           )
         ],
       ),
     );
   }
 
-  void getAllMovieFromFireStore()async{
-   QuerySnapshot<Movie> querySnapshot= await FirebaseUtils.getMovieCollection().get();
-   MovieList = querySnapshot.docs.map((doc) {
-     return doc.data();
-   }).toList();
-   setState(() {
-
-   });
-
+  void getAllMovieFromFireStore() async {
+    QuerySnapshot<Movie> querySnapshot =
+        await FirebaseUtils.getMovieCollection().get();
+    List<Movie> moviesToAdd = querySnapshot.docs.map((doc) {
+      return doc.data();
+    }).toList();
+    for (var movie in moviesToAdd) {
+      if (!movieList.any((existingMovie) => existingMovie.id == movie.id)) {
+        movieList.add(movie);
+      }
+    }
+    setState(() {});
   }
 }
