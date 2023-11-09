@@ -14,7 +14,7 @@ class PopularMoviesSlider extends StatelessWidget {
         items: results.isEmpty
             ? []
             : results
-                .map((result) => MovieICarouseltemWidget(result: result))
+                .map((result) => MovieICarouselItemWidget(result: result))
                 .toList(),
         options: CarouselOptions(
             height: MediaQuery.of(context).size.height * 0.4,

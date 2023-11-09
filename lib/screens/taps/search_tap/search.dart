@@ -7,11 +7,10 @@ import 'package:movies/screens/taps/search_tap/movie_search_item.dart';
 
 import '../../../app_theme.dart';
 
-var searchResults = [];
-
 class SearchScreen extends StatefulWidget {
   @override
   State<SearchScreen> createState() => _SearchScreenState();
+  var searchResults = [];
 }
 
 class _SearchScreenState extends State<SearchScreen> {
@@ -50,7 +49,7 @@ class _SearchScreenState extends State<SearchScreen> {
                   ),
                 ),
               ),
-              (query.isEmpty)
+              query.isEmpty
                   ? Container(
                       margin: EdgeInsets.only(
                           top: MediaQuery.of(context).size.height * 0.27),
@@ -79,14 +78,14 @@ class _SearchScreenState extends State<SearchScreen> {
                         } else if (snapshot.hasError) {
                           return Text(snapshot.error.toString());
                         } else {
-                          var searchResults = snapshot.data!.results ?? [];
+                          widget.searchResults = snapshot.data!.results ?? [];
                           return Expanded(
                             child: ListView.separated(
                               itemBuilder: (context, index) {
                                 return MovieSearchItem(
-                                    movie: searchResults[index]);
+                                    movie: widget.searchResults[index]);
                               },
-                              itemCount: searchResults.length,
+                              itemCount: widget.searchResults.length,
                               separatorBuilder:
                                   (BuildContext context, int index) {
                                 return Padding(
