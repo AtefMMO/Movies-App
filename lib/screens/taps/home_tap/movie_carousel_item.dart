@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:movies/screens/taps/home_tap/image.dart';
-
+import 'package:movies/screens/taps/watchlist_tap/Movie.dart';
 import '../../../app_theme.dart';
 import '../../../model/popular_movies_response.dart';
+import '../watchlist_tap/FirerBase_Utils.dart';
 
 class MovieICarouseltemWidget extends StatefulWidget {
   final Result result;
@@ -56,21 +57,38 @@ class _MovieICarouseltemWidgetState extends State<MovieICarouseltemWidget> {
                       color: AppTheme.lightGrey,
                     ),
             ),
-            Container(
-              padding: EdgeInsets.only(
-                  left: MediaQuery.of(context).size.width * 0.062),
-              height: MediaQuery.of(context).size.height * 0.295,
-              child: isBookmarked
-                  ? const Icon(
-                      Icons.check,
-                      size: 15,
-                      color: Colors.white,
-                    )
-                  : const Icon(
-                      Icons.add,
-                      size: 15,
-                      color: Colors.white,
-                    ),
+            InkWell(
+              onTap: (
+
+                  ){
+                addMovie();
+                if( isBookmarked)
+                {
+                  isBookmarked=false;
+                }
+                else {
+                  isBookmarked=true;
+
+                }
+                setState(() {
+                });
+              },
+              child: Container(
+                padding: EdgeInsets.only(
+                    left: MediaQuery.of(context).size.width * 0.062),
+                height: MediaQuery.of(context).size.height * 0.295,
+                child: isBookmarked
+                    ? const Icon(
+                        Icons.check,
+                        size: 15,
+                        color: Colors.white,
+                      )
+                    : const Icon(
+                        Icons.add,
+                        size: 15,
+                        color: Colors.white,
+                      ),
+              ),
             ),
             Padding(
               padding: EdgeInsets.only(
@@ -117,4 +135,18 @@ class _MovieICarouseltemWidgetState extends State<MovieICarouseltemWidget> {
       ],
     );
   }
+
+  void addMovie(){
+    Movie movie = Movie(
+        id: widget.result!.id.toString());
+    print('${widget.result!.id}');
+    FirebaseUtils.addMovieToFirebase(movie.id!).timeout(
+      Duration(milliseconds: 500),
+      onTimeout: (){
+        print('movie added to WatchList');
+
+      }
+    );
+  }
+
 }
