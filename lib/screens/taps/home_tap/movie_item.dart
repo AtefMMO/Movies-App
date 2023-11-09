@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:movies/model/newrealeses_movies_response.dart';
 
@@ -13,8 +14,12 @@ class MovieItem extends StatelessWidget {
     return Stack(children: [
       ClipRRect(
           borderRadius: BorderRadius.circular(10),
-          child:
-              Image.network(FixImage.fixImage(movie.posterPath ?? 'No Image'))),
+          child:CachedNetworkImage(
+          imageUrl: FixImage.fixImage(movie.posterPath ?? 'No Image'),
+          errorWidget: (context, url, error) => Center(child: Icon(Icons.error,size: 50,)),
+          // Changed to BoxFit.cover for aspect ratio
+          ),
+      ),
       isBookmarked
           ? Icon(
               Icons.bookmark_sharp,
