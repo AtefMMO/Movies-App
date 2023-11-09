@@ -1,17 +1,48 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:movies/model/newrealeses_movies_response.dart';
-
 import '../../../app_theme.dart';
+import '../watchlist_tap/FirerBase_Utils.dart';
+import '../watchlist_tap/Movie.dart';
 import 'image.dart';
 
-class MovieItem extends StatelessWidget {
+class MovieItem extends StatefulWidget {
   var movie;
-  bool isBookmarked = false;
+
   MovieItem({required this.movie});
+
+  @override
+  State<MovieItem> createState() => _MovieItemState();
+}
+
+class _MovieItemState extends State<MovieItem> {
+  bool isBookmarked = false;
+
   @override
   Widget build(BuildContext context) {
     return Stack(children: [
+
+      InkWell(
+        onTap: (){
+          addMovie();
+          if( isBookmarked)
+          {
+            isBookmarked=false;
+          }
+          else {
+            isBookmarked=true;
+
+          }
+          setState(() {
+          });
+        },
+        child: ClipRRect(
+            borderRadius: BorderRadius.circular(10),
+            child:
+                Image.network(FixImage.fixImage(widget.movie.posterPath ?? 'No Image'))),
+      ),
+            isBookmarked
+
       ClipRRect(
           borderRadius: BorderRadius.circular(10),
           child:CachedNetworkImage(
@@ -21,6 +52,7 @@ class MovieItem extends StatelessWidget {
           ),
       ),
       isBookmarked
+
           ? Icon(
               Icons.bookmark_sharp,
               size: 30,
@@ -46,5 +78,17 @@ class MovieItem extends StatelessWidget {
               ),
       ),
     ]);
+  }
+
+  void addMovie(){
+    Movie movie = Movie(
+        id: widget.movie!.id.toString()
+    );
+    FirebaseUtils.addMovieToFirebase(movie.id!).timeout(
+        Duration(milliseconds: 500),
+        onTimeout: (){
+          print('movie added to WatchList');
+        }
+    );
   }
 }
