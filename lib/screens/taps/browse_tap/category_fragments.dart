@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
-
-import '../../../model/categoryTest.dart';
+import '../../../model/browse_genre_response.dart';
 import 'category_item.dart';
 
 class CategoryFragments extends StatelessWidget {
-  var categoriesList = Category.getCategories();
+  late List<Genres> genresList;
+  late List<String> imagePaths;
+  Function onTap;
 
-  // Function onCategoryClick;
-  // CategoryFragments({required this.onCategoryClick});
+  CategoryFragments({required this.genresList, required this.imagePaths,required this.onTap});
 
   @override
   Widget build(BuildContext context) {
@@ -24,16 +24,20 @@ class CategoryFragments extends StatelessWidget {
           Expanded(
             child: GridView.builder(
               gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                  crossAxisCount: 2, mainAxisSpacing: 18, crossAxisSpacing: 18),
+                  childAspectRatio: 1.5,
+                  crossAxisCount: 2,
+                  mainAxisSpacing: 30,
+                  crossAxisSpacing: 30),
               itemBuilder: (context, index) {
                 return InkWell(
                   onTap: () {
-                    // onCategoryClick(categoriesList[index]);
+                    onTap(genresList[index]);
                   },
-                  child: CategoryItem(category: categoriesList[index]),
+                  child: CategoryItem(genres: genresList[index],
+                    imagePath: imagePaths[index],),
                 );
               },
-              itemCount: categoriesList.length,
+              itemCount: genresList.length,
             ),
           )
         ],
