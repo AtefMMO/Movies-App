@@ -14,7 +14,7 @@ Welcome to the Movies App, your go-to platform for exploring, searching, and boo
 
 **Explore popular, upcoming, and top-rated movies.**
 
-![Home Screen]( /screenShots/home.jpeg | width=200)
+<img src="/screenShots/home.jpeg" alt="Home Screen" width="200"/>
 
 **Get detailed information about each movie.**
 
