@@ -12,26 +12,26 @@ Welcome to the Movies App, your go-to platform for exploring, searching, and boo
 
 ## Screenshots
 
-![Home Screen](/screenshots/home.png)
+![Home Screen](/screenshots/home.jpeg)
 *Explore popular, upcoming, and top-rated movies.*
 
-![Movie Details](/screenshots/details.png)
+![Movie Details](/screenshots/movie.jpeg)
 *Get detailed information about each movie.*
 
-![Search](/screenshots/search.png)
+![Search](/screenshots/searchFilled.jpeg)
 *Quickly find any movie you're looking for.*
 
-![Browse by Genre](/screenshots/genres.png)
+![Browse by Genre](/screenshots/browse.jpeg)
 *Discover movies based on your preferred genres.*
 
-![Watchlist](/screenshots/watchlist.png)
+![Watchlist](/screenshots/watchList.jpeg)
 *Keep track of your bookmarked movies.*
 
 ## Technologies Used
 
 - **Flutter:** Cross-platform framework for building mobile applications.
 - **API Integration:** Fetch movie data from [API Provider Name].
-- **State Management:** Utilize [Bloc/Provider/StateNotifier] for effective state management.
+- **State Management:** Utilize [Provider] for effective state management.
 - **Routing:** Navigate seamlessly using [Navigator package].
 
 ## Getting Started
@@ -39,3 +39,12 @@ Welcome to the Movies App, your go-to platform for exploring, searching, and boo
 1. Clone the repository.
    ```bash
    git clone https://github.com/your-username/movies-app.git
+
+2.Install dependencies
+
+flutter pub get
+
+3.Run the app.
+
+flutter run
+
