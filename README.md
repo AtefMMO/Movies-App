@@ -12,20 +12,26 @@ Welcome to the Movies App, your go-to platform for exploring, searching, and boo
 
 ## Screenshots
 
+**Explore popular, upcoming, and top-rated movies.**
+
 ![Home Screen](/screenShots/home.jpeg)
-*Explore popular, upcoming, and top-rated movies.*
+
+**Get detailed information about each movie.**
 
 ![Movie Details](/screenShots/movie.jpeg)
-*Get detailed information about each movie.*
+
+**Quickly find any movie you're looking for.**
 
 ![Search](/screenShots/searchFilled.jpeg)
-*Quickly find any movie you're looking for.*
+
+**Discover movies based on your preferred genres.**
 
 ![Browse by Genre](/screenShots/browse.jpeg)
-*Discover movies based on your preferred genres.*
+
+**Keep track of your bookmarked movies.**
 
 ![Watchlist](/screenShots/watchList.jpeg)
-*Keep track of your bookmarked movies.*
+
 
 ## Technologies Used
 
