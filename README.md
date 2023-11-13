@@ -11,26 +11,31 @@ Welcome to the Movies App, your go-to platform for exploring, searching, and boo
 - **Watchlist:** Keep track of your favorite movies by bookmarking them.
 
 ## Screenshots
+**Splash Screen.**
+
+<img src="/screenShots/splashScreen.jpeg" alt="Home Screen" width="400"/>
 
 **Explore popular, upcoming, and top-rated movies.**
 
-<img src="/screenShots/home.jpeg" alt="Home Screen" width="200"/>
+<img src="/screenShots/home.jpeg" alt="Home Screen" width="400"/>
 
 **Get detailed information about each movie.**
 
-![Movie Details](/screenShots/movie.jpeg )
+<img src="/screenShots/movie.jpeg " alt="Home Screen" width="400"/>
 
 **Quickly find any movie you're looking for.**
 
-![Search](/screenShots/searchFilled.jpeg )
+<img src="/screenShots/searchFilled.jpeg " alt="Home Screen" width="400"/>
+<img src="/screenShots/searchEmpty.jpeg " alt="Home Screen" width="400"/>
 
 **Discover movies based on your preferred genres.**
 
-![Browse by Genre](/screenShots/browse.jpeg)
+<img src="/screenShots/browse.jpeg" alt="Home Screen" width="400"/>
+<img src="/screenShots/action.jpeg" alt="Home Screen" width="400"/>
 
 **Keep track of your bookmarked movies.**
 
-![Watchlist](/screenShots/watchList.jpeg)
+<img src="/screenShots/watchList.jpeg" alt="Home Screen" width="400"/>
 
 
 ## Technologies Used
