@@ -44,6 +44,7 @@ Welcome to the Movies App, your go-to platform for exploring, searching, and boo
 - **API Integration:** Fetch movie data from [API Provider Name].
 - **State Management:** Utilize [Provider] for effective state management.
 - **Routing:** Navigate seamlessly using [Navigator package].
+- **Firebase:** Save your movies on the watchlist using firebase firestore.
 
 ## Getting Started
 
