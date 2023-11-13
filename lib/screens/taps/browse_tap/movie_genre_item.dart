@@ -1,13 +1,12 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
-import 'package:movies/app_theme.dart';
-import 'package:movies/model/search_movies_response.dart';
 import 'package:movies/screens/taps/home_tap/image.dart';
+import '../../../model/movies_by_genre_response.dart';
 
-class MovieSearchItem extends StatelessWidget {
-  late var movie;
+class MovieGenreItem extends StatelessWidget {
+  late Results movie;
 
-  MovieSearchItem({required this.movie});
+  MovieGenreItem({required this.movie});
 
   @override
   Widget build(BuildContext context) {
