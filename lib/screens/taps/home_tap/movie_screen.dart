@@ -126,13 +126,15 @@ textAlign: TextAlign.center,
                                       ),
                                     ),
                                   ),
-                                  Padding(
-                                    padding: const EdgeInsets.all(5),
-                                    child: Text(
-                                      result.overview!,
-                                      style: Theme.of(context).textTheme.titleSmall,
-                                      softWrap: true,
-                                      overflow: TextOverflow.fade,
+                                  Expanded(
+                                    child: Padding(
+                                      padding: const EdgeInsets.all(5),
+                                      child: Text(
+                                        result.overview!,
+                                        style: Theme.of(context).textTheme.titleSmall,
+                                        softWrap: true,
+                                        overflow: TextOverflow.fade,
+                                      ),
                                     ),
                                   ),
                                   Padding(

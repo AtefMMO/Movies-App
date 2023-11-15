@@ -96,7 +96,7 @@ class _MovieICarouselItemWidgetState extends State<MovieICarouselItemWidget> {
             ),
             Padding(
               padding: EdgeInsets.only(
-                  top: MediaQuery.of(context).size.height * 0.36,
+                  top: MediaQuery.of(context).size.height * 0.365,
                   left: MediaQuery.of(context).size.width * 0.45),
               child: Row(
                 children: [
