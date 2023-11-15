@@ -11,31 +11,52 @@ Welcome to the Movies App, your go-to platform for exploring, searching, and boo
 - **Watchlist:** Keep track of your favorite movies by bookmarking them.
 
 ## Screenshots
+**Splash Screen.**
 
-![Home Screen](/screenshots/home.png)
-*Explore popular, upcoming, and top-rated movies.*
+<img src="/screenShots/splashScreen.jpeg" alt="Home Screen" width="400"/>
 
-![Movie Details](/screenshots/details.png)
-*Get detailed information about each movie.*
+**Explore popular, upcoming, and top-rated movies.**
 
-![Search](/screenshots/search.png)
-*Quickly find any movie you're looking for.*
+<img src="/screenShots/home.jpeg" alt="Home Screen" width="400"/>
 
-![Browse by Genre](/screenshots/genres.png)
-*Discover movies based on your preferred genres.*
+**Get detailed information about each movie.**
 
-![Watchlist](/screenshots/watchlist.png)
-*Keep track of your bookmarked movies.*
+<img src="/screenShots/movie.jpeg " alt="Home Screen" width="400"/>
+
+**Quickly find any movie you're looking for.**
+
+<img src="/screenShots/searchFilled.jpeg " alt="Home Screen" width="400"/>
+<img src="/screenShots/searchEmpty.jpeg " alt="Home Screen" width="400"/>
+
+**Discover movies based on your preferred genres.**
+
+<img src="/screenShots/browse.jpeg" alt="Home Screen" width="400"/>
+<img src="/screenShots/action.jpeg" alt="Home Screen" width="400"/>
+
+**Keep track of your bookmarked movies.**
+
+<img src="/screenShots/watchList.jpeg" alt="Home Screen" width="400"/>
+
 
 ## Technologies Used
 
 - **Flutter:** Cross-platform framework for building mobile applications.
 - **API Integration:** Fetch movie data from [API Provider Name].
-- **State Management:** Utilize [Bloc/Provider/StateNotifier] for effective state management.
+- **State Management:** Utilize [Provider] for effective state management.
 - **Routing:** Navigate seamlessly using [Navigator package].
+- **Firebase:** Save your movies on the watchlist using firebase firestore.
 
 ## Getting Started
 
 1. Clone the repository.
    ```bash
    git clone https://github.com/your-username/movies-app.git
+
+2.Install dependencies
+
+flutter pub get
+
+3.Run the app.
+
+flutter run
+
