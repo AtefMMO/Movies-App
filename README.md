@@ -41,7 +41,7 @@ Welcome to the Movies App, your go-to platform for exploring, searching, and boo
 ## Technologies Used
 
 - **Flutter:** Cross-platform framework for building mobile applications.
-- **API Integration:** Fetch movie data from [API Provider Name].
+- **API Integration:** Fetch movie data from [API Tmdp].
 - **State Management:** Utilize [Provider] for effective state management.
 - **Routing:** Navigate seamlessly using [Navigator package].
 - **Firebase:** Save your movies on the watchlist using firebase firestore.
