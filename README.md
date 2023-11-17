@@ -53,10 +53,10 @@ Welcome to the Movies App, your go-to platform for exploring, searching, and boo
    git clone https://github.com/your-username/movies-app.git
 
 2.Install dependencies
-
+ ```bash
 flutter pub get
-
+```
 3.Run the app.
-
+```bash
 flutter run
-
+```
