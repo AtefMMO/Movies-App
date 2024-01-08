@@ -26,13 +26,13 @@ class _MovieICarouselItemWidgetState extends State<MovieICarouselItemWidget> {
         Stack(
           children: [
             Container(
+              height: MediaQuery.of(context).size.height * 0.3,
+              width: double.infinity,
               child: Image.network(
                   FixImage.fixImage(widget.result.backdropPath ?? ''),
                   width: double.infinity,
                   height: double.infinity,
                   fit: BoxFit.fitHeight),
-              height: MediaQuery.of(context).size.height * 0.3,
-              width: double.infinity,
             ),
             Container(
               padding: EdgeInsets.only(

@@ -34,7 +34,7 @@ class _MovieItemState extends State<MovieItem> {
           },
           child: CachedNetworkImage(
             imageUrl: FixImage.fixImage(widget.movie.posterPath ?? 'No Image'),
-            errorWidget: (context, url, error) => Center(
+            errorWidget: (context, url, error) => const Center(
                 child: Icon(
               Icons.error,
               size: 50,

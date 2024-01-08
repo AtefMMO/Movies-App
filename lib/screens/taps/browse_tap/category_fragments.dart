@@ -23,7 +23,7 @@ class CategoryFragments extends StatelessWidget {
           SizedBox(height: 20),
           Expanded(
             child: GridView.builder(
-              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                   childAspectRatio: 1.5,
                   crossAxisCount: 2,
                   mainAxisSpacing: 30,

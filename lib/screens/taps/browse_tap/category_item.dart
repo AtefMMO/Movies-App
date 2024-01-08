@@ -48,7 +48,7 @@ class CategoryItem extends StatelessWidget {
                     fontSize: 20,
                     color: Colors.white,
                     shadows: [
-                      Shadow(
+                      const Shadow(
                         color: Colors.black,
                         blurRadius: 2,
                         offset: Offset(1, 1),

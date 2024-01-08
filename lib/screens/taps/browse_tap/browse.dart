@@ -40,7 +40,7 @@ class _BrowseScreenState extends State<BrowseScreen> {
                     return browseProvider.selectedGenre?.name == null
                         ? CategoryFragments(
                             genresList: genreResult,
-                            imagePaths: [
+                            imagePaths: const [
                               "assets/images/action.jpg",
                               "assets/images/adventure.jpg",
                               "assets/images/animation.jpg",
