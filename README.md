@@ -3,7 +3,7 @@
 Welcome to the Movies App, your go-to platform for exploring, searching, and bookmarking your favorite movies!
 
 ## Features
-- Demo link : https://youtu.be/GWTcmlcj24Y?si=16-JUqkaUJNUYTEG
+- **Demo link :** https://youtu.be/GWTcmlcj24Y?si=16-JUqkaUJNUYTEG
 - **Home Screen:** Discover popular movies, upcoming releases, and top-rated films.
 - **Movie Details:** Click on a movie to view its details, including overview, rating, and similar movies.
 - **Search:** Easily search for any movie you desire.
